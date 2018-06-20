@@ -22,21 +22,39 @@
 <ul>
     <details>
         <summary>iTerms</summary>
-        <pre>
-            - 官网下载iTerms
-            - 安装node, git
-            - npm youdao/http-server -c-1
-            - 设置透明(Perference-Profiles-Window-Transparency)
-            - 设置全屏依然半透明(Perference-General-Native full screen windows)
-        </pre>
+        <ul>
+        <li>官网下载iTerms</li>
+        <li>安装node, git</li>
+        <li>npm youdao/http-server -c-1 </li>
+        <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
+        <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
     </details>
     <details>
-        <summary></summary>
-        <pre></pre>
+        <summary>securtCRT</summary>
+        <ul>
+            <li>下载(securtCRT 史蒂芬周的博客)</li>
+            <li>
+                连接服务器
+                <div>
+                    <img src="./img/svn.png" alt="" width=400 height: 300>
+                </div>
+            </li>
+            <li>
+                我的习惯 
+                <pre>
+                    curl -L  z.sh 到 ~/z.sh  
+                    curl -L bashrc.sh为 ~/.bashrc
+                    curl -L vimrc ~/.vimrc
+                </pre>
+            </li>
+        </ul>
     </details>
     <details>
-        <summary></summary>
-        <pre></pre>
+        <summary>翻墙工具</summary>
+        <ul> 
+           <li>蓝灯: https://github.com/getlantern/lantern</li>
+           <li>shadowsocks: https://portal.shadowsocks.com/clientarea.php?language=chinese</li>
+        </ul>
     </details>
     <details>
         <summary></summary>
