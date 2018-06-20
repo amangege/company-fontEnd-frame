@@ -4,9 +4,9 @@
 <details>
     <summary>目录</summary>
     <ul>
-        <a href="#vim">vim常用命令</a>
-        <a href="#myConfig">我的配置</a>
-        <a href="#app">app</a>
+        <li><a href="#vim">vim常用命令</a></li>
+        <li><a href="#myConfig">我的配置</a></li>
+        <li><a href="#app">app</a></li>
         <li>web</li>
         <li>backend</li>
         <li>数据库</li>
@@ -36,7 +36,7 @@
         <ul>
             <li>官网下载iTerms</li>
             <li>安装node, git</li>
-            <li>npm youdao/http-server -c-1 </li>
+            <li>npm install  youdao/http-server/livereload </li>
             <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
             <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
     </details>
