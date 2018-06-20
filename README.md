@@ -4,15 +4,31 @@
 <details>
     <summary>目录</summary>
     <ul>
-        <a href="#myConfig">我的软件配置</a>
-        <li>app</li>
+        <a href="#vim">vim常用命令</a>
+        <a href="#myConfig">我的配置</a>
+        <a href="#app">app</a>
         <li>web</li>
         <li>backend</li>
         <li>数据库</li>
     </ul>
 </details>
 
+<h2 id='vim'>vim常用</h2>
 
+<table>
+    <tr>
+        <td>替换</td>
+        <td>:%s/待替换/替换为</td>
+    </tr>
+    <tr>
+        <td>查找项目代码</td>
+        <td>:vim /xxx/ 路径 cw, ccl</td>
+    </tr>
+    <tr>
+        <td>水平增加</td>
+        <td>:vertical res +10</td>
+    </tr>
+</table>
 <h2 id='myConfig'>我的配置</h2>
 <ul>
     <details>
