@@ -100,6 +100,7 @@ if (arg) {
 <details>
     <summary>发送Ajax请求</summary>
     <pre>
+
     self.errors = ko.validation.group([])
     self.isValid = ko.computed(function() {
         return self.errors().length === 0;
@@ -181,11 +182,13 @@ if (arg) {
     } 
 
     </pre>
+    
 </details>
 
 <details>
     <summary>从相机在选择图片</summary>
     <pre>
+
 <!-- 
 /* html * /
 <div class="ui-actionsheet" id="choose">
