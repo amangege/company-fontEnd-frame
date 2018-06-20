@@ -1,0 +1,10 @@
+export PS1='\W \$ '
+. ~/z.sh
+alias la='ls -a'
+alias ll='ls -l'
+alias gst='git status -sb'
+alias ga='git add'
+alias ga.='git add .'
+alias gc='git commit -v'
+alias gc.='git commit .'
+alias c='clear'

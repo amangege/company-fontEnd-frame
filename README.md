@@ -72,117 +72,121 @@
 <details>
     <summary>跨页面通信</summary>
     <p>使用这个方法之前,这两个页面需已经用openWin方法打开了</p>
-    <pre>
-        // 写在当前页面
-        var arg = {
-          type: 'refresh',
-        }
-        var jsFun = 'init(' + JSON.stringify(arg) + ')';
-        api.execScript({
-            name: 'xxx',
-            script: jsFun
-        })
-   
-        // 写在接受信息的页面, 这些一般写在init里面
-        var arg = arguments[0] ? arguments[0] : '';
-        if (arg) {
-            switch (arg.type) {
-                case 'refresh':
-                    // ....
-                    break;
-            }
-        }
-    </pre>
+<pre>
+
+// 写在当前页面
+var arg = {
+  type: 'refresh',
+}
+var jsFun = 'init(' + JSON.stringify(arg) + ')';
+api.execScript({
+    name: 'xxx',
+    script: jsFun
+})
+
+// 写在接受信息的页面, 这些一般写在init里面
+var arg = arguments[0] ? arguments[0] : '';
+if (arg) {
+    switch (arg.type) {
+        case 'refresh':
+            // ....
+            break;
+    }
+}
+
+</pre>
 </details>
 
 <details>
     <summary>发送Ajax请求</summary>
     <pre>
-        self.errors = ko.validation.group([])
-        self.isValid = ko.computed(function() {
-            return self.errors().length === 0;
-        })
+    self.errors = ko.validation.group([])
+    self.isValid = ko.computed(function() {
+        return self.errors().length === 0;
+    })
 
-        self.setUser = function() {
-            if (!self.isValid()) {
-                api.toast({
-                    msg: self.errors()[0],
-                    location: 'middle'
-                });
-                return false;
-            }
-
-            var modelData = {}
-            
-            if (self.qq.hasChanges()) {
-                modelData.qq = self.qq();
-            }
-
-            if ($.fn.isEmpty(modelData)) {
-                api.toast({
-                    msg: '没有进行任何修改',
-                    location: 'middle'
-                });
-                return false;
-            }
-
-            $('.spinner').show();
-            api.ajax({
-                url: webhost + '/app/user/setpost',
-                method: 'post',
-                headers: {
-                    "user-agent": navigator.userAgent,
-                    "Cookie": 'PHPSESSID=' + $api.getStorage('PHPSESSID'),
-                    "X-Requested-With": 'XMLHttpRequest'
-                },
-                data: {
-                    body: JSON.stringify(modelData)
-                }
-            }, function(ret, err) {
-                if (ret) {
-                    switch (ret.code) {
-                        case 1:
-                            self.commit();
-                            self.beginEdit();
-                            api.toast({
-                                msg: '保存修改成功!',
-                                location: 'middle'
-                            });
-
-                            break;
-                        case 911:
-                            api.openWin({
-                                name: 'login',
-                                url: 'widget://html/login.html'
-                            });
-                            break;
-                        case 2003:
-                            api.toast({
-                                msg: ret.message,
-                                location: 'middle'
-                            });
-                            break;
-                        default:
-                            api.toast({
-                                msg: '保存修改失败!',
-                                location: 'middle'
-                            });
-                    }
-                } else {
-                    api.toast({
-                        msg: err.msg,
-                        location: 'middle'
-                    });
-                }
-                $('.spinner').hide();
+    self.setUser = function() {
+        if (!self.isValid()) {
+            api.toast({
+                msg: self.errors()[0],
+                location: 'middle'
             });
-        } 
+            return false;
+        }
+
+        var modelData = {}
+        
+        if (self.qq.hasChanges()) {
+            modelData.qq = self.qq();
+        }
+
+        if ($.fn.isEmpty(modelData)) {
+            api.toast({
+                msg: '没有进行任何修改',
+                location: 'middle'
+            });
+            return false;
+        }
+
+        $('.spinner').show();
+        api.ajax({
+            url: webhost + '/app/user/setpost',
+            method: 'post',
+            headers: {
+                "user-agent": navigator.userAgent,
+                "Cookie": 'PHPSESSID=' + $api.getStorage('PHPSESSID'),
+                "X-Requested-With": 'XMLHttpRequest'
+            },
+            data: {
+                body: JSON.stringify(modelData)
+            }
+        }, function(ret, err) {
+            if (ret) {
+                switch (ret.code) {
+                    case 1:
+                        self.commit();
+                        self.beginEdit();
+                        api.toast({
+                            msg: '保存修改成功!',
+                            location: 'middle'
+                        });
+
+                        break;
+                    case 911:
+                        api.openWin({
+                            name: 'login',
+                            url: 'widget://html/login.html'
+                        });
+                        break;
+                    case 2003:
+                        api.toast({
+                            msg: ret.message,
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                        api.toast({
+                            msg: '保存修改失败!',
+                            location: 'middle'
+                        });
+                }
+            } else {
+                api.toast({
+                    msg: err.msg,
+                    location: 'middle'
+                });
+            }
+            $('.spinner').hide();
+        });
+    } 
+
     </pre>
 </details>
 
 <details>
     <summary>从相机在选择图片</summary>
     <pre>
+<!-- 
 /* html * /
 <div class="ui-actionsheet" id="choose">
     <div class="ui-actionsheet-cnt">
@@ -191,7 +195,7 @@
         <button tapmode data-bind="click: cancelChooseClick">取消</button>
     </div>
 </div>
-
+-->
 /* js * /
 self.cameraClick = function() {
         $('#choose').removeClass('show');
@@ -239,54 +243,56 @@ self.cameraClick = function() {
         });
 
     }
-    </pre>
+
+
+</pre>
 </details>
 
 <details>
     <summary>从相册中选取照片</summary>
     <pre>
-        /* html同上 */
-        /* js */
-          self.albumClick = function() {
-            $('#choose').removeClass('show');
-            var w = arguments[0] ? arguments[0] : '';
-            var h = arguments[1] ? arguments[1] : '';
-            api.getPicture({}, function(ret, err) {
-                if (ret) {
-                    qcloudCos.initCOSClient({
-                        appId: jsParam.appId,
-                        region: jsParam.region,
-                    });
-                    api.showProgress({
-                        style: 'default',
-                        animationType: 'fade',
-                        title: '图片上传',
-                        modal: false
-                    });
-                    var cosPath = 'company/' + (new Date()).valueOf()
-                    qcloudCos.putObject({
-                        bucket: jsParam.bucket,
-                        cosPath: cosPath,
-                        localPath: ret.data,
-                        insertOnly: "1",
-                        sign: jsParam.upToken
-                    }, function(res) {
-                        if (res.type == 'onProgress') {
-                            var progress = (res.currentSize / res.totalSize * 100).toFixed(0) + '%';
-                        } else if (res.type == 'onComplete') {
-                            self.headimgurl(cosPath);
-                            api.hideProgress();
-                            self.setUser();
-                        }
-                    });
-                } else {
-                    api.toast({
-                        msg: '打开相册失败, 请重试!',
-                        location: 'middle'
-                    });
-                }
-            });
-        }
+    /* html同上 */
+    /* js */
+      self.albumClick = function() {
+        $('#choose').removeClass('show');
+        var w = arguments[0] ? arguments[0] : '';
+        var h = arguments[1] ? arguments[1] : '';
+        api.getPicture({}, function(ret, err) {
+            if (ret) {
+                qcloudCos.initCOSClient({
+                    appId: jsParam.appId,
+                    region: jsParam.region,
+                });
+                api.showProgress({
+                    style: 'default',
+                    animationType: 'fade',
+                    title: '图片上传',
+                    modal: false
+                });
+                var cosPath = 'company/' + (new Date()).valueOf()
+                qcloudCos.putObject({
+                    bucket: jsParam.bucket,
+                    cosPath: cosPath,
+                    localPath: ret.data,
+                    insertOnly: "1",
+                    sign: jsParam.upToken
+                }, function(res) {
+                    if (res.type == 'onProgress') {
+                        var progress = (res.currentSize / res.totalSize * 100).toFixed(0) + '%';
+                    } else if (res.type == 'onComplete') {
+                        self.headimgurl(cosPath);
+                        api.hideProgress();
+                        self.setUser();
+                    }
+                });
+            } else {
+                api.toast({
+                    msg: '打开相册失败, 请重试!',
+                    location: 'middle'
+                });
+            }
+        });
+    }
     </pre>
 </details>
 
