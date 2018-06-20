@@ -1,8 +1,3 @@
-<style>
-    * {
-        padding-left: 4px;
-    }
-</style>
 <h1>公司前端框架总结</h1>
 
 <h2>Index</h2>
@@ -23,11 +18,11 @@
     <details>
         <summary>iTerms</summary>
         <ul>
-        <li>官网下载iTerms</li>
-        <li>安装node, git</li>
-        <li>npm youdao/http-server -c-1 </li>
-        <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
-        <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
+            <li>官网下载iTerms</li>
+            <li>安装node, git</li>
+            <li>npm youdao/http-server -c-1 </li>
+            <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
+            <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
     </details>
     <details>
         <summary>securtCRT</summary>
@@ -40,9 +35,9 @@
                 </div>
             </li>
             <li>
-                我的习惯 
+                我的习惯
                 <pre>
-                    curl -L  z.sh 到 ~/z.sh  
+                    curl -L  z.sh 到 ~/z.sh
                     curl -L bashrc.sh为 ~/.bashrc
                     curl -L vimrc ~/.vimrc
                 </pre>
@@ -51,9 +46,9 @@
     </details>
     <details>
         <summary>翻墙工具</summary>
-        <ul> 
-           <li>蓝灯: https://github.com/getlantern/lantern</li>
-           <li>shadowsocks: https://portal.shadowsocks.com/clientarea.php?language=chinese</li>
+        <ul>
+            <li>蓝灯: https://github.com/getlantern/lantern</li>
+            <li>shadowsocks: https://portal.shadowsocks.com/clientarea.php?language=chinese</li>
         </ul>
     </details>
     <details>
@@ -68,39 +63,35 @@
 
 <h2 id="app">app常用代码</h2>
 
-
 <details>
-    <summary>跨页面通信</summary>
-    <p>使用这个方法之前,这两个页面需已经用openWin方法打开了</p>
-<pre>
-
-// 写在当前页面
-var arg = {
-  type: 'refresh',
-}
-var jsFun = 'init(' + JSON.stringify(arg) + ')';
-api.execScript({
-    name: 'xxx',
-    script: jsFun
-})
-
-// 写在接受信息的页面, 这些一般写在init里面
-var arg = arguments[0] ? arguments[0] : '';
-if (arg) {
-    switch (arg.type) {
-        case 'refresh':
-            // ....
-            break;
+  <summary>跨页面通信</summary>
+  <p>使用这个方法之前,这两个页面需已经用openWin方法打开了</p>
+  <pre>
+    // 写在当前页面
+    var arg = {
+      type: 'refresh',
     }
-}
+    var jsFun = 'init(' + JSON.stringify(arg) + ')';
+    api.execScript({
+      name: 'xxx',
+      script: jsFun
+    })
 
-</pre>
+    // 写在接受信息的页面, 这些一般写在init里面
+    var arg = arguments[0] ? arguments[0] : '';
+    if (arg) {
+      switch (arg.type) {
+        case 'refresh':
+          // ....
+          break;
+      }
+    }
+  </pre>
 </details>
 
 <details>
-    <summary>发送Ajax请求</summary>
-    <pre>
-
+  <summary>发送Ajax请求</summary>
+  <pre>
     self.errors = ko.validation.group([])
     self.isValid = ko.computed(function() {
         return self.errors().length === 0;
@@ -116,7 +107,7 @@ if (arg) {
         }
 
         var modelData = {}
-        
+
         if (self.qq.hasChanges()) {
             modelData.qq = self.qq();
         }
@@ -179,28 +170,25 @@ if (arg) {
             }
             $('.spinner').hide();
         });
-    } 
-
-    </pre>
-    
+    }
+  </pre>
 </details>
 
 <details>
-    <summary>从相机在选择图片</summary>
-    <pre>
-
-<!-- 
-/* html * /
-<div class="ui-actionsheet" id="choose">
-    <div class="ui-actionsheet-cnt">
-        <button tapmode data-bind="click: cameraClick.bind($data, 180, 180)">拍照</button>
-        <button tapmode data-bind="click: albumClick.bind($data, 180, 180)">从手机相册选择</button>
-        <button tapmode data-bind="click: cancelChooseClick">取消</button>
+  <summary>从相机在选择图片</summary>
+  <pre>
+    <!--
+    /* html * /
+    <div class="ui-actionsheet" id="choose">
+        <div class="ui-actionsheet-cnt">
+            <button tapmode data-bind="click: cameraClick.bind($data, 180, 180)">拍照</button>
+            <button tapmode data-bind="click: albumClick.bind($data, 180, 180)">从手机相册选择</button>
+            <button tapmode data-bind="click: cancelChooseClick">取消</button>
+        </div>
     </div>
-</div>
--->
-/* js * /
-self.cameraClick = function() {
+    -->
+    /* js * /
+    self.cameraClick = function() {
         $('#choose').removeClass('show');
         api.getPicture({
             sourceType: 'camera',
@@ -244,16 +232,13 @@ self.cameraClick = function() {
                 });
             }
         });
-
     }
-
-
-</pre>
+  </pre>
 </details>
 
 <details>
-    <summary>从相册中选取照片</summary>
-    <pre>
+  <summary>从相册中选取照片</summary>
+  <pre>
     /* html同上 */
     /* js */
       self.albumClick = function() {
@@ -296,10 +281,5 @@ self.cameraClick = function() {
             }
         });
     }
-    </pre>
+  </pre>
 </details>
-
-
-
-
-
