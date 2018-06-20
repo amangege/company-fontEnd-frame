@@ -4,12 +4,12 @@
 <details>
     <summary>目录</summary>
     <ul>
-        <a href="#vim">vim常用命令</a>
-        <a href="#myConfig">我的配置</a>
-        <a href="#app">app</a>
-        <li>web</li>
-        <li>backend</li>
-        <li>数据库</li>
+        <li><a href="#vim">vim常用命令</a></li>
+        <li><a href="#myConfig">我的配置</a></li>
+        <li><a href="#app">app</a></li>
+        <li><li>web</li></li>
+        <li><li>backend</li></li>
+        <li><li>数据库</li></li>
     </ul>
 </details>
 
