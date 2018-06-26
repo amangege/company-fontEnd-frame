@@ -7,9 +7,15 @@
         <li><a href="#vim">vim常用命令</a></li>
         <li><a href="#myConfig">我的配置</a></li>
         <li><a href="#app">app</a></li>
+<<<<<<< HEAD
         <li><a href='#web'>web</a></li>
         <li>backend</li>
         <li>数据库</li>
+=======
+        <li><li>web</li></li>
+        <li><li>backend</li></li>
+        <li><li>数据库</li></li>
+>>>>>>> 074a4cc64418870dbb576889de83b2bd7df64354
     </ul>
 </details>
 
