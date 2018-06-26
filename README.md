@@ -7,7 +7,7 @@
         <li><a href="#vim">vim常用命令</a></li>
         <li><a href="#myConfig">我的配置</a></li>
         <li><a href="#app">app</a></li>
-        <li>web</li>
+        <li><a href='#web'>web</a></li>
         <li>backend</li>
         <li>数据库</li>
     </ul>
@@ -299,3 +299,12 @@
     }
   </pre>
 </details>
+
+<h2 id="web">web</h2>
+
+<table>
+    <tr>
+        <td>超级管理员</td>
+        <td>manage/adminlogin/super</td>
+    </tr>
+</table>
