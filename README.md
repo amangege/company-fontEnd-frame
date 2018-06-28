@@ -7,15 +7,7 @@
         <li><a href="#vim">vim常用命令</a></li>
         <li><a href="#myConfig">我的配置</a></li>
         <li><a href="#app">app</a></li>
-<<<<<<< HEAD
         <li><a href='#web'>web</a></li>
-        <li>backend</li>
-        <li>数据库</li>
-=======
-        <li><li>web</li></li>
-        <li><li>backend</li></li>
-        <li><li>数据库</li></li>
->>>>>>> 074a4cc64418870dbb576889de83b2bd7df64354
     </ul>
 </details>
 
@@ -33,6 +25,10 @@
     <tr>
         <td>水平增加</td>
         <td>:vertical res +10</td>
+    </tr>
+    <tr>
+        <td>垂直增加</td>
+        <td>:res +10</td>
     </tr>
 </table>
 <h2 id='myConfig'>我的配置</h2>
@@ -62,6 +58,10 @@
                     curl -L  z.sh 到 ~/z.sh
                     curl -L bashrc.sh为 ~/.bashrc
                     curl -L vimrc ~/.vimrc
+
+                    我的bashrc配置
+                    
+                    alias h='cd /html-path/'
                 </pre>
             </li>
         </ul>
@@ -314,3 +314,57 @@
         <td>manage/adminlogin/super</td>
     </tr>
 </table>
+<ul>
+    <details>
+        <summay>showImg</summay>
+        <pre>
+        self.showImg = function(img) {
+            return 'http://' + jsParam.cdn + '/' + img  ;
+        };        
+        
+        self.showImg = function(img) {
+            var w = arguments[1] ? arguments[1] : '';
+            var h = arguments[2] ? arguments[2] : '';
+            var type = arguments[3] ? arguments[3] : '';
+            if (img && w && type) {
+                return 'url(http://' + jsParam.cdn + '/' + img + '?imageView2/1/w/' + w + '/h/' + h + '|imageMogr2/size-limit/'+ getImgSize +'!)';
+    }
+            if (img && w) {
+                return 'url(http://' + jsParam.cdn + '/' + img + '?imageView2/1/w/' + w + '/h/' + h + '|imageMogr2/size-limit/'+ listImgSize +'!)';
+    }
+            return 'url(http://' + jsParam.cdn + '/' + img + ')';
+        };
+        </pre>
+    </details>
+    <details>
+        <summary>模板</summary>
+        <pre>
+            $('document').ready(funtion(){
+                ko.validation.init({
+                    errorElementClass: 'has-error',
+                    insertMessages: true
+                })        
+                
+                var ViewModel = function() {};
+
+                var viewModel = newViewModel();
+                ko.applyBindings(viewModel, document.getElementById());
+            })
+        </pre>
+    </details>
+    <details>
+        <summary>校验错误</summary>
+        <pre>
+            self.errors = ko.validation.group([]);
+            self.isValid = ko.computed(function(){
+                return self.errors.length === 0;
+            });
+
+            // 验证
+            if (!self.isValid()) {
+                self.errors.showAllMessages();
+                return false;
+            }
+        </pre>
+    </details>
+</ul>
