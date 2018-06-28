@@ -41,6 +41,7 @@
             <li>npm install  youdao/http-server/livereload </li>
             <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
             <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
+        </ul>
     </details>
 
     <details>
