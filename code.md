@@ -42,6 +42,7 @@
             <li> 设置透明(Perference-Profiles-Window-Transparency)</li>
             <li>设置全屏依然半透明(Perference-General-Native full screen windows)</li>
     </details>
+
     <details>
         <summary>securtCRT</summary>
         <ul>
@@ -66,6 +67,7 @@
             </li>
         </ul>
     </details>
+
     <details>
         <summary>翻墙工具</summary>
         <ul>
@@ -73,6 +75,7 @@
             <li>shadowsocks: https://portal.shadowsocks.com/clientarea.php?language=chinese</li>
         </ul>
     </details>
+    
     <details>
         <summary>其他工具</summary>
         <ul>
@@ -84,7 +87,7 @@
 </ul>
 
 <h2 id="app">app常用代码</h2>
-
+<div>
 <details>
   <summary>跨页面通信</summary>
   <p>使用这个方法之前,这两个页面需已经用openWin方法打开了</p>
@@ -314,7 +317,7 @@
         <td>manage/adminlogin/super</td>
     </tr>
 </table>
-<ul>
+<div>
     <details>
         <summay>showImg</summay>
         <pre>
@@ -367,5 +370,4 @@
             }
         </pre>
     </details>
-    waiting
-</ul>
+</div>
