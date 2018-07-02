@@ -1,14 +1,12 @@
 /*
-跨页面通讯
-发送ajax请求
-从相机中选择图片
+    跨页面通讯
+    发送ajax请求
+    从相机中选择图片
 */
 
 
-/*
-跨页面通讯
-使用之前页面已经被openWin方法打开
-*/
+/* 跨页面通讯 使用之前页面已经被openWin方法打开 */
+
 var arg = {
     type: 'refresh',
 }
@@ -29,6 +27,7 @@ if (arg) {
 }
 
 /* 发送ajax请求 */
+
 self.errors = ko.validation.group([])
 self.isValid = ko.computed(function () {
     return self.errors().length === 0;

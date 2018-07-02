@@ -4,6 +4,7 @@
     错误校验
     特殊的校验规则
 */
+
 /* 展示图片 */
 
 self.showImg = function (img) {
@@ -24,6 +25,7 @@ self.showImg = function (img) {
 };
 
 / * 发送ajax请求 */
+
 $.ajax({
     url: '/web/product/addpost',
     data: JSON.stringify(modelData)
