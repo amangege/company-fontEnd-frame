@@ -3,6 +3,7 @@
     发送ajax请求(包含了notify函数)
     错误校验
     特殊的校验规则
+    分页
 */
 
 /* 展示图片 */
@@ -98,3 +99,20 @@ function specialValidation() {
         viewModel.errorList.push('有什么错误')
     }
 }
+
+/* 分页 */
+
+    <div class="pagination" id="pagination" data-bind="visible: total() > 0">
+        <div class="prev" data-bind="click: prevClick, visible: pageNo() != 1">
+            <span>上一页</span>
+        </div>
+        <div class="num" id="num">
+        </div>
+        <div class="next" data-bind="click: nextClick, visible: pageNo() != Math.ceil(total()/pageSize())">
+            <span>下一页</span>
+        </div>
+        <div class="jump">
+            <input type="number" placeholder="1" data-bind="value: jumpNum">
+            <span data-bind="click: jumpClick">跳转</span>
+        </div>
+    </div>
