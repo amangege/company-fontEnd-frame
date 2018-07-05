@@ -8,13 +8,13 @@
             <a href="#vim">vim常用命令</a>
         </li>
         <li>
-            <a href="#myConfig">我的配置</a>
+            <a href="#myConfig">个人配置</a>
         </li>
         <li>
-            <a href="#app">app</a>
+            <a href="#rules">潜在规则</a>
         </li>
         <li>
-            <a href='#web'>web</a>
+            <a href='#code'>常用代码</a>
         </li>
     </ul>
 </details>
@@ -38,7 +38,10 @@
         <td>:res +10</td>
     </tr>
 </table>
-<h2 id='myConfig'>我的配置</h2>
+<h2 id='myConfig'>个人配置</h2>
+
+> 这些是我只是我个人的喜好
+
 <details>
     <summary>iTerms</summary>
     <ul>
@@ -89,18 +92,21 @@
     </ul>
 </details>
 
-<h2>默认规则</h2>
-<table>
-    <tr>
-        <td>超级管理员</td>
-        <td>manage/adminlogin/super</td>
-    </tr>
-</table>
 
-<hr>
-<h2>代码</h2>
-1.
-<a id="app" href="./app.js">app</a>
-<br> 2.
-<a href="./web.js">web</a>
+
+<h2 id='rules'>潜在规则</h2>
+
+<pre>
+    1. 上传图片命名格式: web/backend/app_页面名称_图片名称.png
+
+    2. 声明函数样式
+        var example = function() {}
     
+    3. 超级管理员: your-domain-name/manage/adminlogin/super 
+
+</pre>
+
+<h2 id='code'>代码</h2>
+
+<h4>1. App <a id="app" href="./app.js"> click me</a></h4>
+<h4>2. Web <a href="./web.js"> click me</a></h4>
