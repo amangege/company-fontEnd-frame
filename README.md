@@ -104,6 +104,8 @@
     
     3. 超级管理员: your-domain-name/manage/adminlogin/super 
 
+    4. 显示图片格式: 要用span标签
+        <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span>
 </pre>
 
 <h2 id='code'>代码</h2>
