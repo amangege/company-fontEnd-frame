@@ -103,13 +103,30 @@
     3. 超级管理员: your-domain-name/manage/adminlogin/super 
 
     4. 显示图片格式: 要用span标签
-        <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span>
-        <span data-bind='style: {backgroundImage: $root.showImg(cover())}'></span>
+       <!-- <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span> -->
+       <!-- <span data-bind='style: {backgroundImage: $root.showImg(cover())}'></span> -->
     
     5. pageNo(页数) pageSize(页码)
+
+    6. 关于showImg第二三个参数选择,为了使图片获得比较好的清晰度,一般设置图片大小的3-5倍,比如图片100x200,  
+       那showImg(cover(), 300, 600), 同时css的图片格式要设置background-size: cover
 </pre>
 
 <h2 id='code'>代码</h2>
 
-<h4>1. App <a id="app" href="./app.js"> click me</a></h4>
-<h4>2. Web <a href="./web.js"> click me</a></h4>
+<h3> App <a id="app" href="./app.js"> click me to read all</a></h3>
+   
+   1. 跨页面通讯    
+   2. 发送ajax请求    
+   3. 从相机中选择图片  
+  
+<h3> Web <a href="./web.js"> click me to read all</a></h3>
+ 
+   1. 展示图片  
+   2. 发送ajax请求  
+   3. 错误校验  
+   4. 特殊的校验规则  
+   5. 分页   
+   6. 特殊的topbar  
+   <img src='./img/topbar.png' width=340 height=140>
+
