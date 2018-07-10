@@ -102,9 +102,9 @@
     
     3. 超级管理员: your-domain-name/manage/adminlogin/super 
 
-    4. 显示图片格式: 要用span标签
-       <!-- <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span> -->
-       <!-- <span data-bind='style: {backgroundImage: $root.showImg(cover())}'></span> -->
+    4. 显示图片格式: 要用span标签(用开发者工具查看写法)
+       <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'>示例1</span> 
+       <span data-bind='style: {backgroundImage: $root.showImg(cover())}'>示例2</span> 
     
     5. pageNo(页数) pageSize(页码)
 
