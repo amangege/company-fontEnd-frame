@@ -104,6 +104,7 @@
 
     4. 显示图片格式: 要用span标签
         <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span>
+        <span data-bind='style: {backgroundImage: $root.showImg(cover())}'></span>
     
     5. pageNo(页数) pageSize(页码)
 </pre>
