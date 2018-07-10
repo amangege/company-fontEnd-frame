@@ -92,8 +92,6 @@
     </ul>
 </details>
 
-
-
 <h2 id='rules'>潜在规则</h2>
 
 <pre>
@@ -106,6 +104,8 @@
 
     4. 显示图片格式: 要用span标签
         <span style='background-image: url(http://pam4l3kdd.bkt.clouddn.com/web_companySpace_watch.png)'></span>
+    
+    5. pageNo(页数) pageSize(页码)
 </pre>
 
 <h2 id='code'>代码</h2>
